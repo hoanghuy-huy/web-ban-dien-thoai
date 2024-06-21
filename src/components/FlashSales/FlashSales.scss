@@ -1,0 +1,89 @@
+.flash-sales {
+    margin: 20px 0;
+    width: 1200px;
+    height: 435px;
+}
+
+
+// header flash sales
+.flash-sales-header {
+    font-size: 28px;
+    text-decoration: underline;
+    font-weight: 700;
+    margin: 0 30px 20px 0;
+    color: #fc521d;
+    text-decoration: none;
+    padding-top: 15px;
+
+    .flash-sales-header-content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.timer span , .timer strong {
+    font-size: 15px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    font-size: 15px;
+    text-align: center;
+    padding: 6px 0 6px 0;
+}
+
+
+.timer strong {
+    background-color: var(--black);
+    color: var(--white);
+    width: 32px;
+    border-radius: 5px;
+}
+
+.timer span {
+    color: var(--black);
+}
+
+
+// content
+
+.flash-sales-content {
+    background-color: var(--white);
+    height: 362px;
+    width: 1200px;
+    padding: 10px 50px;
+    background: #fff;
+    box-shadow: 0 4px 6px #00000029;
+    border-radius: 8px;
+}
+
+
+
+
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    font-size: 50px;
+    color: #c2c2c273;
+    padding: 8px;
+    border-radius: 50%;
+    &:hover {
+        color: #e6e4e473;
+    }
+}
+  
+.custom-prev-arrow {
+    left: -45px;
+}
+
+.custom-next-arrow {
+    right: -45px;
+}
+
+.arrow {
+    font-size: 50px;
+}

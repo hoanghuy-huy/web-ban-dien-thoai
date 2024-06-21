@@ -1,0 +1,16 @@
+{
+    "slides": [
+        {
+            "src":"https://cdn.hoanghamobile.com/i/home/Uploads/2024/05/27/web-huawel-fit-3-web.jpg",
+            "alt":"Image 1 for slides"
+        },
+        {
+            "src":"https://cdn.hoanghamobile.com/i/home/Uploads/2024/05/17/galaxy-s24-ultra-wweb.jpg",
+            "alt":"Image 2 for slides"
+        },        
+        {
+            "src":"https://cdn.hoanghamobile.com/i/home/Uploads/2024/05/27/web-banner-14-ultra.jpg",
+            "alt":"Image 3 for slides"
+        }
+    ]
+}
