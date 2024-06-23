@@ -1,12 +1,20 @@
 import classNames from 'classnames/bind';
-import useStore from '~/store/hooks';
+import TippyHeadless from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
+// import { useEffect } from 'react';
+// import fetchApi from '~/apiServices/userService';
+import useStore from '~/store/hooks';
 import { CartIcon } from '~/components/Icon';
 import styles from './Header.module.scss';
 import Search from '~/components/Search';
 import MenuCartItem from '~/components/Popper/MenuCartItem';
 import Nav from '~/components/Nav';
 import { showAuthForm } from '~/store/Actions';
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 const items = [
     {
         title: 'Laptop Dell Inspiron 15 3530 (71026454) - Chính hãng',
@@ -71,10 +79,21 @@ const logo_smart_phone = [
 
 const cx = classNames.bind(styles);
 
-
 function Header() {
-    const user_login = false;
+    // useEffect(() => {
+    //     const api = async () => {
+    //         const res = await fetchApi(2)
 
+    //         console.log(res)
+    //     }
+    //     api()
+    // },[])
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        window.location.reload()
+    }
+
+    const user_login = !!localStorage.getItem('token');
 
     const dispatch = useStore()[1];
 
@@ -89,10 +108,29 @@ function Header() {
                     <li className={cx('top-navigation__item')}>Giới Thiệu </li>
                     <li className={cx('top-navigation__item')}>Hỗ trợ</li>
                     {user_login ? (
-                        <li
-                            className={cx('top-navigation__item')}
-                        >
-                            user name
+                        <li className={cx('top-navigation__item')}>
+                            <TippyHeadless
+                                delay={[300, 500]}
+                                interactive
+                                placement="bottom-start"
+                                render={(attrs) => (
+                                    <div
+                                        className={cx('menu-cart-item')}
+                                        tabIndex="-1"
+                                        {...attrs}
+                                    >
+                                        <div className={cx('user-menu')}> 
+                                            <div className={cx('user-menu-item')}>
+                                                <div onClick={handleLogout}>
+                                                    Logout <FontAwesomeIcon icon={faArrowRightFromBracket}/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            >
+                              <div>user name</div>
+                            </TippyHeadless>
                         </li>
                     ) : (
                         <li

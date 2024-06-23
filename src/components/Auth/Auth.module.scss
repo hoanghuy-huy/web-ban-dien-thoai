@@ -121,8 +121,33 @@
     height: 400px;
 }
 
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-loading {
+  align-self: center;
+  font-size: 10px;
+  animation: loading 2s linear infinite;
+  
+}
+
+.disable {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.4;
+  background-color: #fff;
+  color: black;
+}
+
 .form-container.register {
     height: 450px;
+    user-select: none;
 }
 
 button.form-btn.btn-nomal {

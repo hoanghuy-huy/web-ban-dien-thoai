@@ -27,6 +27,24 @@
     }
 }
 
+.user-menu {
+    position: absolute;
+    color: black;
+    background-color: #fff;
+    height: 100px;
+    width: 130px;
+    right: 0;
+    border-radius: 3px;
+    text-align: center;
+
+    .user-menu-item  {
+        font-size: 15px;
+        &:hover {
+            background-color: var(--light-green-color--hover);
+        }
+    }
+}
+
 .heading {
     height: 84px;
     color: #333;

@@ -1,11 +1,11 @@
-import React from 'react';
 import { useState } from 'react';
 import classNames from 'classnames/bind';
+import { ImSpinner8 } from "react-icons/im";
 
 import styles from './Auth.module.scss';
 import useStore from '~/store/hooks';
 import { showAuthForm } from '~/store/Actions';
-
+import  loginApi from '~/apiServices/authService';
 const cx = classNames.bind(styles);
 
 const user = [
@@ -29,12 +29,17 @@ export default function Auth() {
     const [email, setEmail] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const dispatch = useStore()[1];
+    const [loading, setLoading] = useState(false)
 
 
     const handleShowForm = (state) => {
         setEmail('');
         setPassword('');
         setStateShowFrom(state);
+    };
+
+    const handleValueEmail = (email) => {
+        setEmail(email);
     };
 
     const handleValuePassword = (password) => {
@@ -45,22 +50,32 @@ export default function Auth() {
         setConfirmPassword(confirmPassword);
     };
 
-    const handleValueEmail = (email) => {
-        setEmail(email);
-    };
 
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
+        
 
-        if (email === '' || password === '') return alert('Missing value');
+        if (email === '' || password === '') {
+            return alert('Missing value');
+        }
+        setLoading(true)
+        let res = await loginApi(email, password)
 
-        for (let i = 0; i < user.length; i++) {
-            if (email === user[i].email && password === user[i].password) {
-                return alert('Login successfully');
-                //return console.log('correct',user[i])
+        
+        if(res && res.token) {
+            localStorage.setItem("token",res.token)
+            dispatch(showAuthForm(false))
+            alert('Đăng nhập thành công')
+        } else {
+            const response = res.response
+            if(response && response.status === 400) {
+                alert(response.data.error)
             }
         }
-        return alert('Wrong email or password');
+        
+        setLoading(false)
+
+
     };
 
     const handleRegister = (event) => {
@@ -135,12 +150,15 @@ export default function Auth() {
                                 </span>
                             </p>
                             <button
-                                className={cx('form-btn')}
+                                className={cx('form-btn',{
+                                    'disable': email === '' || password === '' ? true : false
+                    
+                                })}
                                 onClick={(event) =>
                                     handleLogin(event, email, password)
                                 }
                             >
-                                Đăng nhập
+                                { loading && <ImSpinner8 className={cx('icon-loading')}/> } <span> Đăng nhập</span>
                             </button>
                             <button
                                 className={cx('form-btn', 'btn-nomal')}
