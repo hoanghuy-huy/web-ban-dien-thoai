@@ -21,21 +21,6 @@ const items = [
         price: '17,490,000₫',
         img: 'https://hoanghamobile.com/productlist/dst/Uploads/2024/02/17/n3530i716w1_638437598703921025.jpg',
     },
-    {
-        title: 'Laptop Dell Inspiron 15 3520 (71027003) - Chính hãng',
-        price: '19,490,000₫',
-        img: 'https://hoanghamobile.com/productlist/dst/Uploads/2024/02/17/n3530i716w1_638437598703921025.jpg',
-    },
-    {
-        title: 'Laptop Dell Inspiron 15 3520 (71027003) - Chính hãng',
-        price: '20,490,000₫',
-        img: 'https://hoanghamobile.com/productlist/dst/Uploads/2024/02/17/n3530i716w1_638437598703921025.jpg',
-    },
-    {
-        title: 'iPhone 15 (256GB) - Chính hãng VN/A',
-        price: '12,199,000₫',
-        img: 'https://hoanghamobile.com/productlist/dst/Uploads/2023/09/13/iphone-15-pink-pure-back-iphone-15-pink-pure-front-2up-screen-usen.png',
-    },
 ];
 
 const logo_smart_phone = [
@@ -43,38 +28,7 @@ const logo_smart_phone = [
         img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
         brandName: 'Iphone',
     },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/OPPO42-b_5.jpg',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
-    {
-        img: 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-        brandName: 'Iphone',
-    },
+
 ];
 
 const cx = classNames.bind(styles);

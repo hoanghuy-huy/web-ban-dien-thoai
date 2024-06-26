@@ -2,11 +2,15 @@
 
 // Pages
 import Home from '~/pages/Home';
+import ProductDetail from '~/pages/ProductDetail';
+import routesConfig from '~/configs';
+
 
 
 //Public Routes
 const publicRoutes = [
-    { path: '/', component: Home },
+    { path: routesConfig.home , component: Home },
+    { path: routesConfig.productDetail , component: ProductDetail },
     // { path: '/following', component: Following },
     // { path: '/search', component: Search, layout: null },
     // { path: '/upload', component: Upload, layout: HeaderOnly },

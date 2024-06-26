@@ -8,6 +8,9 @@
     background-color: var(--white);
     box-shadow: 0 4px 6px #00000029;
     border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .main-contain {
